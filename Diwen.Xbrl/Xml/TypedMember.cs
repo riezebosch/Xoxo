@@ -99,7 +99,7 @@ namespace Diwen.Xbrl.Xml
         /// <summary/>
         public void ReadXml(XmlReader reader)
         {
-            ArgumentNullException.ThrowIfNull(reader);
+            Xbrl.ArgumentNullException.ThrowIfNull(reader);
 
             reader.MoveToContent();
             var dim = reader.GetAttribute("dimension");
@@ -116,7 +116,7 @@ namespace Diwen.Xbrl.Xml
         /// <summary/>
         public void WriteXml(XmlWriter writer)
         {
-            ArgumentNullException.ThrowIfNull(writer);
+            Xbrl.ArgumentNullException.ThrowIfNull(writer);
 
             writer.WriteAttributeString("dimension", Dimension.Name);
 

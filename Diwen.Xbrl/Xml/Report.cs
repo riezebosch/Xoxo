@@ -114,7 +114,7 @@ namespace Diwen.Xbrl.Xml
         [XmlIgnore]
         public SchemaReference SchemaReference
         {
-            get => SchemaReferences?.FirstOrDefault(new SchemaReference());
+            get => SchemaReferences?.FirstOrDefault() ?? new SchemaReference();
             set => SchemaReferences = [value];
         }
 
@@ -192,7 +192,7 @@ namespace Diwen.Xbrl.Xml
         /// <summary/>
         public void SetDimensionNamespace(string prefix, Uri namespaceUri)
         {
-            ArgumentNullException.ThrowIfNull(namespaceUri);
+            Xbrl.ArgumentNullException.ThrowIfNull(namespaceUri);
 
             SetDimensionNamespace(prefix, namespaceUri.ToString());
         }
@@ -206,7 +206,7 @@ namespace Diwen.Xbrl.Xml
         /// <summary/>
         public void SetMetricNamespace(string prefix, Uri namespaceUri)
         {
-            ArgumentNullException.ThrowIfNull(namespaceUri);
+            Xbrl.ArgumentNullException.ThrowIfNull(namespaceUri);
 
             SetMetricNamespace(prefix, namespaceUri.ToString());
         }
@@ -221,7 +221,7 @@ namespace Diwen.Xbrl.Xml
         /// <summary/>
         public void SetTypedDomainNamespace(string prefix, Uri namespaceUri)
         {
-            ArgumentNullException.ThrowIfNull(namespaceUri);
+            Xbrl.ArgumentNullException.ThrowIfNull(namespaceUri);
 
             SetTypedDomainNamespace(prefix, namespaceUri.ToString());
         }
@@ -236,7 +236,7 @@ namespace Diwen.Xbrl.Xml
         /// <summary/>
         public void AddDomainNamespace(string prefix, Uri namespaceUri)
         {
-            ArgumentNullException.ThrowIfNull(namespaceUri);
+            Xbrl.ArgumentNullException.ThrowIfNull(namespaceUri);
 
             AddDomainNamespace(prefix, namespaceUri.ToString());
         }

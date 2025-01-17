@@ -110,7 +110,7 @@ namespace Diwen.Xbrl.Xml
         /// <summary/>
         public void ReadXml(XmlReader reader)
         {
-            ArgumentNullException.ThrowIfNull(reader);
+            Xbrl.ArgumentNullException.ThrowIfNull(reader);
 
             reader.MoveToContent();
             var content = reader.GetAttribute("dimension");
@@ -132,7 +132,7 @@ namespace Diwen.Xbrl.Xml
         /// <summary/>
         public void WriteXml(XmlWriter writer)
         {
-            ArgumentNullException.ThrowIfNull(writer);
+            Xbrl.ArgumentNullException.ThrowIfNull(writer);
 
             var prefix = writer.LookupPrefix(Dimension.Namespace);
             var dim = $"{prefix}:{Dimension.LocalName()}";

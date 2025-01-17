@@ -99,9 +99,9 @@ namespace Diwen.Xbrl.Xml
         /// <summary/>
         public Fact(Context context, string metric, Unit unit, string decimals, string value, Uri namespaceUri, string prefix) : this()
         {
-            ArgumentNullException.ThrowIfNull(context);
+            Xbrl.ArgumentNullException.ThrowIfNull(context);
 
-            ArgumentNullException.ThrowIfNull(namespaceUri);
+            Xbrl.ArgumentNullException.ThrowIfNull(namespaceUri);
 
             Metric = new XmlQualifiedName($"{prefix}:{metric}", namespaceUri.ToString());
             Unit = unit;

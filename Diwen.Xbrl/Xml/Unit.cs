@@ -27,7 +27,7 @@ namespace Diwen.Xbrl.Xml
     using System.Xml.Schema;
     using System.Xml.Serialization;
     using Diwen.Xbrl.Extensions;
-
+    
     /// <summary/>
     [DebuggerDisplay("{Id}")]
     [Serializable]
@@ -99,7 +99,7 @@ namespace Diwen.Xbrl.Xml
         /// <summary/>
         public void ReadXml(XmlReader reader)
         {
-            ArgumentNullException.ThrowIfNull(reader);
+            Xbrl.ArgumentNullException.ThrowIfNull(reader);
 
             reader.MoveToContent();
             Id = reader.GetAttribute("id");
@@ -126,7 +126,7 @@ namespace Diwen.Xbrl.Xml
         /// <summary/>
         public void WriteXml(XmlWriter writer)
         {
-            ArgumentNullException.ThrowIfNull(writer);
+            Xbrl.ArgumentNullException.ThrowIfNull(writer);
 
             writer.WriteAttributeString("id", Id);
             var prefix = Measure.Prefix();

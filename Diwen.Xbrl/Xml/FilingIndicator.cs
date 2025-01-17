@@ -75,7 +75,7 @@ namespace Diwen.Xbrl.Xml
         public FilingIndicator(Context context, string value, bool filed)
             : this()
         {
-            ArgumentNullException.ThrowIfNull(context);
+            Xbrl.ArgumentNullException.ThrowIfNull(context);
 
             Context = context;
             Value = value;

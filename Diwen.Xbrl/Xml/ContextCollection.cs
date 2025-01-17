@@ -53,7 +53,7 @@ namespace Diwen.Xbrl.Xml
         /// <summary/>
         public new Context Add(Context context)
         {
-            ArgumentNullException.ThrowIfNull(context);
+            Xbrl.ArgumentNullException.ThrowIfNull(context);
 
             if (context.Entity == null)
                 context.Entity = report.Entity;
